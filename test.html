@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">``
+    <title>끝말잇기</title>
+    <style>
+ 
+    </style>
+</head>````
+<body>
+    <div><span id="order">1</span>번째 참가자</div>
+    <div>제시어: <span id="word"></span></div>
+    <input type="text">
+    <button>입력</button>
+ 
+    <script>
+        //const number = parseInt(prompt('몇 명이 참가하나요?'), 10);
+        // 값을 받을 때 문자열로 받기 때문에 parsInt로 변환해준다.
+        //prompt는 사용자로부터 입력을 받음
+        //alert(number);
+        //arlert는 경고창입니다.
+        //const yesOrNo = confirm('맞습니까?');
+        //사용자의 확인, 취소를 받는다.
+ 
+        //const $button = document.querySelector('button');
+        //선택(button)하여 $button에 넣는다.
+        //const $$button = document.querySelectorAll('button');
+        //모든 선택(button)하여 $$button에 넣는다.
+ 
+        const onClick = function (){
+            console.log('버튼 클릭');
+        }
+ 
+        document.querySelector('input').addEventListener('input', function(){
+        //html에서 발생하는 이벤트를 감지할 수 있게 만들기 위해서 .addEventListener('이벤트이름', 함수(){}); 를 만듭니다.
+        //함수로 만듬으로써 지속해서 사용할 수 있습니다. - > input이 될때마다 이벤트가 발생한다.
+        //콜백함수, 익명함수, 리스너 함수 여러가지 이름으로 불린다.
+            console.log('글자 입력');
+        });
+        // document.querySelector('button').addEventListener('click', function(){
+        //     console.log('버튼 클릭');
+        // });
+        document.querySelector('button').addEventListener('click', onClick);
+ 
+    </script>
+</body>
+</html>
