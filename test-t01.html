@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>끝말잇기02</title>
+</head>
+<body>
+    <div><span id="order">1</span>번째 참가자</div>
+    <div>제시어: <span id="word"></span></div>
+    <input type="text">
+    <button>입력</button>
+</body>
+<script>
+    // prompt('몇명입니까?');
+    const $input = document.querySelector('input');
+    const $button = document.querySelector('button');
+    const $record = document.querySelector('#word');
+
+    let newText; //값
+    let inputNewText; //다시 입력하는 값
+
+    const clickInput = function(){
+        if(newText){
+            inputNewText = newText;
+            $record.textContent = inputNewText;
+            $input.value = '';
+        }else{
+
+        };
+    }
+
+
+    $input.addEventListener('input', clickInput); // input에 입력값을 넣어 줌.
+
+
+</script>
+</html>

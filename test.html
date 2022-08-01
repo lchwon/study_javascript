@@ -20,6 +20,7 @@
         const $button = document.querySelector('button');
         const $input = document.querySelector('input');
         const $word = document.querySelector('#word');
+        const $order = document.querySelector('#order');
         let word; //제시어
         let newWord; //새로운 입력 단어
 
@@ -41,12 +42,30 @@
                 word = newWord;//입력한 단어가 제시어가 됨
                 $word.textContent = word;
                 $input.value = '';
+                $input.focus();
+                const order = Number($order.textContent);
+                    if(order + 1 > number){
+                        $order.textContent = 1;
+                    } else{
+                        $order.textContent = order + 1;
+                    };
             } else{
                 // 비어 있지 않다.
                 if(word[word.length - 1] === newWord[0]){ //올바른가
+                    word = newWord;// 올바를 경우 
+                    $word.textContent = word;
+                    $input.value = '';
+                    const order = Number($order.textContent);
+                    if(order + 1 > number){
+                        $order.textContent = 1;
+                    } else{
+                        $order.textContent = order + 1;
+                    };
 
                 } else { // 올바르지 않은가
-
+                    alert('틀렸습니다,');
+                    $input.value = '';
+                    $input.focus();
                 }
             }
         };
