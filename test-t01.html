@@ -21,19 +21,22 @@
     let newText; //값
     let inputNewText; //다시 입력하는 값
 
-    const clickInput = function(){
-        if(newText){
-            inputNewText = newText;
-            $record.textContent = inputNewText;
+    const oClickButton = function(){
+        if(!newText){
+            newText = inputNewText;
+            $record.textContent = newText;
             $input.value = '';
         }else{
 
         };
     }
 
+    const clickInput = function(){
+        inputNewText = event.target.value;
+    }
 
     $input.addEventListener('input', clickInput); // input에 입력값을 넣어 줌.
-
+    $button.addEventListener('click', oClickButton);
 
 </script>
 </html>
