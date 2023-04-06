@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>끝말잇기</title>
-      
+    <style>
+
+    </style>
 </head>
 <body>
     <div><span id="order">1</span>번째 참가자</div>
@@ -13,7 +15,15 @@
     <input type="text">
     <button>입력</button>
     <script>
-        
+        const number = parseInt(prompt('몇 명이 참가?'));
+        // 값을 저장할 수 있도록 변수선언
+        // 그냥 prompt에 입력할 경우 문자열로 인식되기에 'parseInt'를 사용하여 숫자로 변환
+        // < 3가지 대화상자 >
+        //prompt는 사용자에 대한 값을 입력받을 수 있다.
+        //alert는 경고창
+        //confirm은 사용자에게 '확인', '취소'를 받을 수 있다. bloomearn로 값을 받을 수 있다. 확인 -> true / 취소 -> false
+        console.log('number', number);
+        //값이 number이라는 변수에 잘 들어가는지 확인하기 위해서 console.log를 사용하여 값을 확인해본다.
     </script>
 </body>
 </html>
