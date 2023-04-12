@@ -25,8 +25,17 @@
         //console.log('number', number);
         //값이 number이라는 변수에 잘 들어가는지 확인하기 위해서 console.log를 사용하여 값을 확인해본다.
 
-        alert(nember);
+        alert(number);
         const yesOrNo = confirm('맞습니까?');
+
+        document.querySelector('input').addEventListener('input', function(event){
+            console.log('입력값', event.target.value);
+            //사용자가 입력한 값을 볼 수 있도록 event.target.value를 넣어준다
+            //이벤트가 발생한 대상 객체를 가리킨다.
+        });
+        document.querySelector('button').addEventListener('click', function(){
+            console.log('클릭을 했을 때');
+        });      
     </script>
 </body>
 </html>
