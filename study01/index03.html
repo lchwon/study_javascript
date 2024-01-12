@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자야구</title>
+    <style>
+   
+    </style>
+</head>
+
+<body>
+    <form id="form"> <!-- 기본적으로 form으로 묶어야 한다. -->
+        <input type="input" id="input">
+        <button>확인</button>
+    </form>
+    <div id="logs"></div>
+    <script>
+       const $input = document.querySelector('#input');
+       const $form = document.querySelector('#form');
+       const $log = document.querySelector('#logs')
+    
+       const numbers = []; //배열을 만들고 [1,2,3,4,5,6,7,8,9]
+       for (let n = 0; n < 9; n += 1) { //0 ~ 8까지 반복문 실행
+            numbers.push(n + 1); //push를 이용해서 'n'의 값을 넣어 줌
+       }
+
+       const answer = []; //4개 의 숫자를 numbers에서 뽑는다. 뽑고 numbers에서는 없앤다.
+       for (let m = 0; m < 4; m += 1) {
+            const index = Math.floor(Math.random() * numbers.length);
+            answer.push(numbers[index])
+            numbers.splice(index , 1)
+
+       }
+
+       console.log(answer); //4개의 숫자 값이 들어가 있는지 확인
+
+       const tries = [];
+       function checkInput(input) { //검사하는 코드
+            if (input.length !== 4) { //길이(입력값)가 4가 맞는가?
+                return alert('4자리를 입력하세요.')
+            }
+            if (new Set(input).size !== 4) { //중복된 숫자를 입력했는가?
+                //new Set은 중복된 값을 빼주는 것 size로 계산한다.
+                return alert('중복되지 않게 입력하세요.')
+            }
+            if (tries.includes(input)) { //이미 입력했던(시도했던) 값인가?
+                return alert('이미 시도한 값 입니다.')
+            }
+
+            return true;
+       } 
+
+       $form.addEventListener('submit', (event) => {
+            event.preventDefault(); //기본동작을 막을 수 있다.
+            const value = $input.value;
+            $input.value = ''; //다시 입력 했을 때의 편의성을 위해서 지워 줌
+            if (checkInput(value)) {
+                //입력값의 문제가 없을 경우 
+                tries.push(value);
+
+            } else {
+                //입력값의 에러가 있을 경우 
+
+
+            }
+       })
+    </script>
+</body>
+
+</html>
