@@ -93,12 +93,32 @@ function multiply6(x) {
 }
 console.log(multiply6(3)(4)(5));
 
+const multiplyTwo = function(x, y){
+   return x*y;
+}
+console.log(multiplyTwo(4,5));
 
+const multiplyThree = function(x,y,z){
+   console.log(arguments); //[Arguments] { '0': 4, '1': 5, '2': 6 } 출력 각 x,y,z 순서 확인 가능
+   return x * y * z;
+}
 
+console.log('----------');
+console.log(multiplyThree(4,5,6));
 
+//무한하게 파라미터 받기
+const multiplyAll = function(...arguments){
+   return Object.values(arguments).reduce((a,b) => a*b,1);
+}
 
+console.log(multiplyAll(3,5,6,7,8,9,10));
 
+console.log('----------');
 
+// immediately invoked function
+(function(x,y){
+   console.log(x*y);
+})(5,6)
 
-
-
+console.log(typeof multiply);
+console.log( multiply instanceof Object); //좌측인 비교하려는 값 .. multiply가 Object인가 확인하는 것 같은 타입인지 확인하는 것
