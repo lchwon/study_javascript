@@ -109,7 +109,7 @@ console.log(iveMembers);
 // filter() - true를 반환하면 킵 false면 킵하지 않음
 number = [1, 8, 7, 6, 3]
 
-console.log(number.filter((x) => x % 2 ===0)); // true인 8,6 반환
+console.log(number.filter((x) => x % 2 === 0)); // true인 8,6 반환
 
 // find() - 가장 첫 번째에 해당되는 값을 반환
 console.log(number.find((x) => x % 2 === 0)); // 가장 첫 번째인 8을 반환
