@@ -1,5 +1,5 @@
 /**
- * Array Functions ()
+ * Array Functions () ()
  */
 
 let iveMembers = [ '안유', '가을', '레이', '장원', '리즈', '이서',];
