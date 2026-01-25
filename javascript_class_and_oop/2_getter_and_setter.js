@@ -13,7 +13,7 @@ class IdolModel{
 
     /**
      * 1) 데이터를 가공해서 새로운 데이터를 반환할 때
-     * 2) private한 값을 반호나할 때
+     * 2) 2한 값을 반환할 때
      */
     get nameAndYear(){
         return `${this.name} - ${this.year}`
